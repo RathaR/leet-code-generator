@@ -1,0 +1,18 @@
+{
+ "entryPoint" : "<%= entryPoint %>",
+  "specs": [<%  _.each(specs, function(spec, index) { %>
+    {
+      "id" : <%= index %>,
+      "input": <% if(_.isString(spec.input)) { %>
+          "<%= spec.input %>"
+        <% } else {  %>
+          <%= spec.input %>
+        <% } %>,
+      "expect":  <% if(_.isString(spec.expect)) { %>
+          "<%= spec.input %>"
+        <% } else {  %>
+          <%= spec.input %>
+        <% } %>
+    },
+  <% }) %>]
+}
